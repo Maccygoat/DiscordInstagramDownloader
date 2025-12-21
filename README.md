@@ -5,7 +5,7 @@ This bot supports most proxy URLs like eeinstagram.com
 # Installation guide
 ## Clone the repository
 ```bash
-gh clone https://github.com/Maccygoat/DiscordInstagramDownloader.git
+git clone https://github.com/Maccygoat/DiscordInstagramDownloader.git
 cd DiscordInstagramDownloader
 ```
 
