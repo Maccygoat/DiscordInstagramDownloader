@@ -1,0 +1,7 @@
+{
+	"token": "Discord_Token",
+	"clientId": "Application_ID",
+	"guildId": "Owner_Server_ID",
+    "logChannelId": "Channel_ID",
+    "ownerId": "Owner_ID"
+}
