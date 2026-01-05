@@ -15,21 +15,19 @@ module.exports = {
         ),
 
     async execute(interaction) {
-        await interaction.deferReply({ flags: MessageFlags.Ephemeral });
+        await interaction.deferReply();
         const inputUrl = interaction.options.getString('url', true);
         const reelUrl = extractInstagramUrl(inputUrl);
 
         if (!reelUrl) {
             return interaction.editReply({
-                content: 'No valid Instagram reel URL found.',
-                flags: MessageFlags.Ephemeral
+                content: 'No valid Instagram reel URL found.'
             });
         }
 
         try {
             const filePath = await downloadVideo(reelUrl);
 
-            await interaction.followUp({ content: 'Reel found and downloaded' });
             await interaction.followUp({
                 content: `Downloaded reel from: <${reelUrl}>`,
                 files: [filePath]
