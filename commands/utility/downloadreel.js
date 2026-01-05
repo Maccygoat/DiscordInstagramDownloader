@@ -39,9 +39,9 @@ module.exports = {
         } catch (err) {
             console.error(err);
             await interaction.editReply({
-                content: `Failed to download reel: ${err.message}`,
-                flags: MessageFlags.Ephemeral
+                content: `Failed to download reel: ${err.message}`
             });
         }
     }
 };
+
