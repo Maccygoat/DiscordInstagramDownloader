@@ -17,7 +17,7 @@ function downloadVideo(url) {
 
 //      const cookieFile = path.join(__dirname, '..', 'cookies.txt');
 //      const command = `yt-dlp -N 12 --cookies "${cookieFile}" -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
-        const command = `yt-dlp -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
+        const command = `yt-dlp -N 12 -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
 //      console.log(command);
 
         exec(command, (error, stdout, stderr) => {
@@ -64,4 +64,5 @@ function downloadVideo(url) {
 }
 
 module.exports = { downloadVideo };
+
 
