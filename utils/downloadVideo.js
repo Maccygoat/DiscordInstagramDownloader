@@ -10,6 +10,7 @@ function downloadVideo(url) {
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
+        const userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1'
         const outputTemplate = path.join(
             outputDir,
             '%(epoch>%Y%m%d)s-%(epoch>%H%M%S)s-%(uploader)s-%(id)s.%(ext)s'
@@ -17,7 +18,8 @@ function downloadVideo(url) {
 
 //      const cookieFile = path.join(__dirname, '..', 'cookies.txt');
 //      const command = `yt-dlp -N 12 --cookies "${cookieFile}" -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
-        const command = `yt-dlp -N 12 -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
+//      const command = `yt-dlp -N 12 -S "proto,ext:mp4:m4a,res,br" -o "${outputTemplate}" "${url}"`;
+        const command = `yt-dlp -N 12 -S "proto,ext:mp4:m4a,res,br" --user-agent "${userAgent}" -o "${outputTemplate}" "${url}"`;
 //      console.log(command);
 
         exec(command, (error, stdout, stderr) => {
@@ -64,5 +66,6 @@ function downloadVideo(url) {
 }
 
 module.exports = { downloadVideo };
+
 
 
